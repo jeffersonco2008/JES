@@ -1,2 +1,4 @@
-print("hello world")
-print("segunda edicion")
+TWITTER_APP_KEY = "Your Key Here"
+TWITTER_APP_KEY_SECRET = "Your Key Here" 
+TWITTER_ACCESS_TOKEN = "Your Key Here"
+TWITTER_ACCESS_TOKEN_SECRET = "Your Key Here"

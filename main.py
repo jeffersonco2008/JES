@@ -13,3 +13,9 @@ t = Twython(app_key=KEY,
 query=input("Enter the hashtag:");
 query="".join(["#",query]);
 
+search = t.search(q=query, count=100)
+
+tweets = search['statuses']
+
+for tweet in tweets:
+  print(tweet['id_str'], '\n', tweet['text'], '\n\n\n')

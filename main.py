@@ -1,5 +1,8 @@
 from nltk import word_tokenize
 from twython import Twython
+import codecs;
+import sys;
+sys.stdout = codecs.getwriter('utf8')(sys.stdout.buffer);
 
 # Twitter API tokens
 KEY = "Your Key Here"
@@ -14,11 +17,11 @@ twitter = Twython(app_key=KEY,
             oauth_token_secret=ACCESS_TOKEN_SECRET)
 
 # input hashtag
-#hashtag = input("Enter the hashtag:");
-#hashtag="".join(["#",query]);
+hashtag = input("Enter the hashtag:");
+hashtag="".join(["#",query]);
 
-hashtag = "#TriviaHeineken2018"
-tweetsCountSearchLimit = 3
+#hashtag = "#TriviaHeineken2018"
+tweetsCountSearchLimit = 30
 # Documentation: https://developer.twitter.com/en/docs/tweets/search/api-reference/get-search-tweets
 search = twitter.search(q=hashtag, count=tweetsCountSearchLimit, result_type='recent')
 tweets = search['statuses']

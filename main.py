@@ -21,8 +21,13 @@ twitter = Twython(app_key=KEY,
 #hashtag="".join(["#",query]);
 
 hashtag = "#TriviaHeineken2018"
-tweetsCountSearchLimit = 20
+# Tweets search limit
+tweetsCountSearchLimit = 15
 # Documentation: https://developer.twitter.com/en/docs/tweets/search/api-reference/get-search-tweets
+# Options:
+#   result_type='mixed': Include both popular and real time results in the response.
+#   result_type='recent': Return only the most recent results in the response
+#   result_type='popular': Return only the most popular results in the response.
 search = twitter.search(q=hashtag, count=tweetsCountSearchLimit, result_type='recent')
 tweets = search['statuses']
 
@@ -70,7 +75,7 @@ for tweet in tweets:
     # Tree?
     # https://pypi.python.org/pypi/anytree
     # Documentation: http://anytree.readthedocs.io/en/latest/api.html
-    #node = Node(tweet['id_str'])
+    node = Node(tweet['id_str'])
     #tweetsNodes.append(tweet['id_str'])
     #if tweet['in_reply_to_status_id_str'] is not None:
     #    if tweet['in_reply_to_status_id_str'] in tweetsNodes:
